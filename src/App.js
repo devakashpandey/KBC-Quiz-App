@@ -2,10 +2,9 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <div>
-        <h1>akash</h1>
-      </div>
+    <div className="app">
+      <div className="left-side">MAIN</div>
+      <div className="right-side">PYRAMID</div>
     </div>
   );
 }
