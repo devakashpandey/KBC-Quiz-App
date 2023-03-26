@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Prices from "./components/prices/Prices";
+import Quiz from "./components/quiz/Quiz";
 
 function App() {
   const [question, setQuestion] = useState(1);
@@ -29,7 +30,9 @@ function App() {
         <div className="top">
           <div className="timer">30</div>
         </div>
-        <div className="bottom">QUES / ANS</div>
+        <div className="bottom">
+          <Quiz />
+        </div>
       </div>
       <div className="money-side">
         <Prices prices={prices} question={question} />

@@ -1,0 +1,40 @@
+.quiz {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.ques {
+  width: 80%;
+  border: 1px solid #fff;
+  background: linear-gradient(#100241, black);
+  border-radius: 100px;
+  text-align: center;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.answers {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-bottom: 10px;
+  margin-top: -30px;
+}
+
+.answer {
+  width: 38%;
+  padding: 10px;
+  background: linear-gradient(#0e0124, #22074d);
+  border: 2px solid white;
+  border-radius: 100px;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: capitalize;
+  cursor: pointer;
+}
