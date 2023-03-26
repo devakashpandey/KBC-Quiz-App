@@ -1,7 +1,7 @@
 import React from "react";
 import "./Prices.css";
 
-const Prices = ({ prices, question }) => {
+const Prices = ({ prices, questionNo }) => {
   return (
     <>
       <ul className="moneyList">
@@ -10,7 +10,7 @@ const Prices = ({ prices, question }) => {
             <>
               <li
                 className={
-                  question === item.id
+                  questionNo === item.id
                     ? "moneyList-item active"
                     : "moneyList-item"
                 }

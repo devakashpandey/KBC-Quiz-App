@@ -1,105 +1,125 @@
-const data = [
+export const data = [
   {
     question: "Which one is following a React Hook? ",
-    answer: [
+    answers: [
       {
-        option: "Redux",
+        option: "A : ",
+        option_ans: "Redux",
         correct: false,
       },
       {
-        option: "useState",
+        option: "B : ",
+        option_ans: "useState",
         correct: true,
       },
       {
-        option: "React-Router",
+        option: "C : ",
+        option_ans: "React-Router",
         correct: false,
       },
       {
-        option: "React-Bootstrap",
+        option: "D : ",
+        option_ans: "React-Bootstrap",
         correct: false,
       },
     ],
   },
   {
     question: "When did the `Instagram` Launched? ",
-    answer: [
+    answers: [
       {
-        option: "14 Nov 2005",
+        option: "A : ",
+        option_ans: "14 Nov 2005",
         correct: false,
       },
       {
-        option: "25 Jan 2008",
+        option: "B : ",
+        option_ans: "25 Jan 2008",
         correct: false,
       },
       {
-        option: "06 Oct 2010",
+        option: "C : ",
+        option_ans: "06 Oct 2010",
         correct: true,
       },
       {
-        option: "17 May 2012",
+        option: "D : ",
+        option_ans: "17 May 2012",
         correct: false,
       },
     ],
   },
   {
     question: "The Movie `Spider Man: No Way Home is Directed by? ",
-    answer: [
+    answers: [
       {
-        option: "Peter Ramsey",
+        option: "A : ",
+        option_ans: "Peter Ramsey",
         correct: false,
       },
       {
-        option: "Marc Webb",
+        option: "B : ",
+        option_ans: "Marc Webb",
         correct: false,
       },
       {
-        option: "Sam Raimi",
+        option: "C : ",
+        option_ans: "Sam Raimi",
         correct: false,
       },
       {
-        option: "Jon Watts",
+        option: "D : ",
+        option_ans: "Jon Watts",
         correct: true,
       },
     ],
   },
   {
     question: "Who played the character of `Iron Man` in Avengers? ",
-    answer: [
+    answers: [
       {
-        option: "Tony Edward",
+        option: "A : ",
+        option_ans: "Tony Edward",
         correct: true,
       },
       {
-        option: "Henry Jonathan",
+        option: "B : ",
+        option_ans: "Henry Jonathan",
         correct: false,
       },
       {
-        option: "Janet Van Dyne",
+        option: "C : ",
+        option_ans: "Janet Van Dyne",
         correct: false,
       },
       {
-        option: "Dr. Robert Bruce Banner",
+        option: "D : ",
+        option_ans: "Dr. Robert Bruce Banner",
         correct: false,
       },
     ],
   },
   {
     question: "Which country was winner of Cricket World Cup in 2019?",
-    answer: [
+    answers: [
       {
-        option: "India",
+        option: "A : ",
+        option_ans: "India",
         correct: false,
       },
       {
-        option: "Sri Lanka",
+        option: "B : ",
+        option_ans: "Sri Lanka",
         correct: false,
       },
       {
-        option: "England",
+        option: "C : ",
+        option_ans: "England",
         correct: true,
       },
       {
-        option: "Australia",
+        option: "D : ",
+        option_ans: "Australia",
         correct: false,
       },
     ],

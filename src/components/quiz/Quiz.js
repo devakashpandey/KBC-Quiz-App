@@ -1,16 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Quiz.css";
+import { data } from "../../Data";
 
-const Quiz = () => {
+const Quiz = ({ setTimeOut, questionNo, setQuestionNo }) => {
+  const [currentQues, setCurrentQues] = useState("");
+
+  useEffect(() => {
+    setCurrentQues(data[questionNo - 1]); // array index - 1
+  }, [data, questionNo]);
+
   return (
     <>
       <div className="quiz">
-        <div className="ques">What is my name?</div>
+        <div className="ques">{currentQues.question}</div>
         <div className="answers">
-          <div className="answer ">A : rahul</div>
-          <div className="answer">B : akash</div>
-          <div className="answer">C : shubham</div>
-          <div className="answer ">D : golu</div>
+          {currentQues.answers.map((ans) => {
+            return (
+              <div className="answer">
+                {ans.option}
+                {ans.option_ans}
+              </div>
+            );
+          })}
         </div>
       </div>
     </>
