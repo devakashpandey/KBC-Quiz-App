@@ -25,7 +25,12 @@ function App() {
 
   return (
     <div className="app">
-      <div className="question-side"></div>
+      <div className="left-container">
+        <div className="top">
+          <div className="timer">30</div>
+        </div>
+        <div className="bottom">QUES / ANS</div>
+      </div>
       <div className="money-side">
         <Prices prices={prices} question={question} />
       </div>
