@@ -4,19 +4,32 @@ import { data } from "../../Data";
 
 const Quiz = ({ setTimeOut, questionNo, setQuestionNo }) => {
   const [currentQues, setCurrentQues] = useState("");
+  const [selectedAns, setSelectedAns] = useState("");
+  const [className, setClassName] = useState("answer");
 
   useEffect(() => {
     setCurrentQues(data[questionNo - 1]); // array index - 1
   }, [data, questionNo]);
+
+  const handleClick = (ans) => {
+    setSelectedAns(ans);
+    setClassName("answer active");
+    setTimeout(() => {
+      setClassName(ans.correct ? "answer correct" : "answer wrong");
+    }, 3000);
+  };
 
   return (
     <>
       <div className="quiz">
         <div className="ques">{currentQues.question}</div>
         <div className="answers">
-          {currentQues.answers.map((ans) => {
+          {currentQues.answers?.map((ans) => {
             return (
-              <div className="answer">
+              <div
+                className={selectedAns === ans ? className : "answer"}
+                onClick={() => handleClick(ans)}
+              >
                 {ans.option}
                 {ans.option_ans}
               </div>
