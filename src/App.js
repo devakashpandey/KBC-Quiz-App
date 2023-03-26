@@ -27,7 +27,7 @@ function App() {
     <div className="app">
       <div className="question-side"></div>
       <div className="money-side">
-        <Prices prices={prices} />
+        <Prices prices={prices} question={question} />
       </div>
     </div>
   );
