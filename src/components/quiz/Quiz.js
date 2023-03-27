@@ -17,6 +17,7 @@ const Quiz = ({ setStop, questionNo, setQuestionNo }) => {
     setTimeout(() => {
       setClassName(ans.correct ? "answer correct" : "answer wrong");
     }, 3000);
+    // next ques logic (change ques after 6 sec)----->>>
     setTimeout(() => {
       {
         if (ans.correct) {

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Prices from "./components/prices/Prices";
 import Quiz from "./components/quiz/Quiz";
@@ -6,6 +6,7 @@ import Quiz from "./components/quiz/Quiz";
 function App() {
   const [questionNo, setQuestionNo] = useState(1);
   const [stop, setStop] = useState(false);
+  const [earned, setEarned] = useState("₹ 0");
 
   const prices = [
     { id: 16, amount: "₹ 7 Crore" },
@@ -26,20 +27,29 @@ function App() {
     { id: 1, amount: "₹ 1,000" },
   ];
 
+  useEffect(() => {}, []);
+
   return (
     <div className="app">
       <div className="left-container">
-        <div className="top">
-          <div className="timer">30</div>
-        </div>
-        <div className="bottom">
-          <Quiz
-            setStop={setStop}
-            setQuestionNo={setQuestionNo}
-            questionNo={questionNo}
-          />
-        </div>
+        {stop ? (
+          <h1 className="earned">You Earned:{earned} </h1>
+        ) : (
+          <>
+            <div className="top">
+              <div className="timer">30</div>
+            </div>
+            <div className="bottom">
+              <Quiz
+                setStop={setStop}
+                setQuestionNo={setQuestionNo}
+                questionNo={questionNo}
+              />
+            </div>
+          </>
+        )}
       </div>
+
       <div className="money-side">
         <Prices prices={prices} questionNo={questionNo} />
       </div>
