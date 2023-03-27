@@ -27,7 +27,10 @@ function App() {
     { id: 1, amount: "₹ 1,000" },
   ];
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    questionNo > 1 &&
+      setEarned(prices.find((money) => money.id === questionNo - 1).amount);
+  }, [prices, questionNo]);
 
   return (
     <div className="app">

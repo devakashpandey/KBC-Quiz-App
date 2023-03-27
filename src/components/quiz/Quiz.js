@@ -34,11 +34,12 @@ const Quiz = ({ setStop, questionNo, setQuestionNo }) => {
       <div className="quiz">
         <div className="ques">{currentQues.question}</div>
         <div className="answers">
-          {currentQues.answers?.map((ans) => {
+          {currentQues.answers?.map((ans, index) => {
             return (
               <div
                 className={selectedAns === ans ? className : "answer"}
                 onClick={() => handleClick(ans)}
+                key={index}
               >
                 {ans.option}
                 {ans.option_ans}

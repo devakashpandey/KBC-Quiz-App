@@ -7,7 +7,7 @@ const Prices = ({ prices, questionNo }) => {
       <ul className="moneyList">
         {prices.map((item, index) => {
           return (
-            <>
+            <div key={index}>
               <li
                 className={
                   questionNo === item.id
@@ -19,7 +19,7 @@ const Prices = ({ prices, questionNo }) => {
                 <span className="symbol">-</span>
                 {item.amount}
               </li>
-            </>
+            </div>
           );
         })}
       </ul>
