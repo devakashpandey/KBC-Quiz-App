@@ -12,6 +12,16 @@ const Quiz = ({ setStop, questionNo, setQuestionNo }) => {
   const [selectedAns, setSelectedAns] = useState("");
   const [className, setClassName] = useState("answer");
 
+  // ADDING SOUNDS HERE --------->>
+  const [letsPlay] = useSound(play);
+  const [correctAns] = useSound(correct);
+  const [waitPlease] = useSound(wait);
+  const [wrongAns] = useSound(wrong);
+
+  useEffect(() => {
+    letsPlay();
+  }, [letsPlay]);
+
   useEffect(() => {
     setCurrentQues(data[questionNo - 1]); // array index - 1
   }, [data, questionNo]);
@@ -20,14 +30,17 @@ const Quiz = ({ setStop, questionNo, setQuestionNo }) => {
     setSelectedAns(ans);
     setClassName("answer active");
     setTimeout(() => {
+      waitPlease();
       setClassName(ans.correct ? "answer correct" : "answer wrong");
     }, 3000);
     // next ques logic (change ques after 6 sec)----->>>
     setTimeout(() => {
       {
         if (ans.correct) {
+          correctAns();
           setQuestionNo((prev) => prev + 1);
         } else {
+          wrongAns();
           setStop(true);
         }
       }
