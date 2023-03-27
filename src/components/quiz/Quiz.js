@@ -38,10 +38,14 @@ const Quiz = ({ setStop, questionNo, setQuestionNo }) => {
       {
         if (ans.correct) {
           correctAns();
-          setQuestionNo((prev) => prev + 1);
+          setTimeout(() => {
+            setQuestionNo((prev) => prev + 1);
+          }, 4000);
         } else {
           wrongAns();
-          setStop(true);
+          setTimeout(() => {
+            setStop(true);
+          }, 3000);
         }
       }
     }, 6000);
