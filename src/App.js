@@ -5,7 +5,7 @@ import Quiz from "./components/quiz/Quiz";
 
 function App() {
   const [questionNo, setQuestionNo] = useState(1);
-  const [timeout, setTimeOut] = useState(false);
+  const [stop, setStop] = useState(false);
 
   const prices = [
     { id: 16, amount: "₹ 7 Crore" },
@@ -34,7 +34,7 @@ function App() {
         </div>
         <div className="bottom">
           <Quiz
-            setTimeOut={setTimeOut}
+            setStop={setStop}
             setQuestionNo={setQuestionNo}
             questionNo={questionNo}
           />

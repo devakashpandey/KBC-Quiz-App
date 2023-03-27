@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Quiz.css";
 import { data } from "../../Data";
 
-const Quiz = ({ setTimeOut, questionNo, setQuestionNo }) => {
+const Quiz = ({ setStop, questionNo, setQuestionNo }) => {
   const [currentQues, setCurrentQues] = useState("");
   const [selectedAns, setSelectedAns] = useState("");
   const [className, setClassName] = useState("answer");
@@ -17,6 +17,15 @@ const Quiz = ({ setTimeOut, questionNo, setQuestionNo }) => {
     setTimeout(() => {
       setClassName(ans.correct ? "answer correct" : "answer wrong");
     }, 3000);
+    setTimeout(() => {
+      {
+        if (ans.correct) {
+          setQuestionNo((prev) => prev + 1);
+        } else {
+          setStop(true);
+        }
+      }
+    }, 6000);
   };
 
   return (
