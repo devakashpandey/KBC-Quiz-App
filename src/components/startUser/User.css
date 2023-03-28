@@ -68,3 +68,10 @@
 .custom-shape-divider-bottom-1680017593 .shape-fill {
   fill: #390f4e;
 }
+
+@media (max-width: 500px) {
+  .start-img > img {
+    height: 19rem;
+    margin-bottom: 2rem;
+  }
+}

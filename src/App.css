@@ -18,6 +18,7 @@
 
 .money-side {
   width: 25%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,4 +59,17 @@
   align-items: center;
   height: 100vh;
   font-size: 4rem;
+}
+
+@media (max-width: 500px) {
+  .money-side {
+    display: none;
+  }
+
+  .earned {
+    font-size: 2.5rem;
+  }
+  .left-container {
+    width: 100%;
+  }
 }
