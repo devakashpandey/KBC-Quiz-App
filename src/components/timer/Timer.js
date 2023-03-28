@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const Timer = ({ setStop, questionNo }) => {
-  const [timer, setTimer] = useState(30);
+  const [timer, setTimer] = useState(35);
 
   useEffect(() => {
     if (timer === 0) return setStop(true); // jab timer 0 ho jaae to stop ko true kr do
@@ -12,7 +12,7 @@ const Timer = ({ setStop, questionNo }) => {
   }, [setStop, timer]);
 
   useEffect(() => {
-    setTimer(30);
+    setTimer(10000);
   }, [questionNo]);
 
   return timer;

@@ -3,11 +3,13 @@ import "./App.css";
 import Prices from "./components/prices/Prices";
 import Quiz from "./components/quiz/Quiz";
 import Timer from "./components/timer/Timer";
+import User from "./components/startUser/User";
 
 function App() {
   const [questionNo, setQuestionNo] = useState(1);
   const [stop, setStop] = useState(false);
   const [earned, setEarned] = useState("₹ 0");
+  const [username, setUsername] = useState("");
 
   const prices = useMemo(
     () => [
@@ -39,30 +41,36 @@ function App() {
 
   return (
     <div className="app">
-      <div className="left-container">
-        {stop ? (
-          <h1 className="earned">You Earned:{earned} </h1>
-        ) : (
-          <>
-            <div className="top">
-              <div className="timer">
-                <Timer setStop={setStop} questionNo={questionNo} />
-              </div>
-            </div>
-            <div className="bottom">
-              <Quiz
-                setStop={setStop}
-                setQuestionNo={setQuestionNo}
-                questionNo={questionNo}
-              />
-            </div>
-          </>
-        )}
-      </div>
+      {username ? (
+        <>
+          <div className="left-container">
+            {stop ? (
+              <h1 className="earned">You Earned:{earned} </h1>
+            ) : (
+              <>
+                <div className="top">
+                  <div className="timer">
+                    <Timer setStop={setStop} questionNo={questionNo} />
+                  </div>
+                </div>
+                <div className="bottom">
+                  <Quiz
+                    setStop={setStop}
+                    setQuestionNo={setQuestionNo}
+                    questionNo={questionNo}
+                  />
+                </div>
+              </>
+            )}
+          </div>
 
-      <div className="money-side">
-        <Prices prices={prices} questionNo={questionNo} />
-      </div>
+          <div className="money-side">
+            <Prices prices={prices} questionNo={questionNo} />
+          </div>
+        </>
+      ) : (
+        <User setUsername={setUsername} />
+      )}
     </div>
   );
 }

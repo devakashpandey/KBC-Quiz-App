@@ -24,7 +24,7 @@ const Quiz = ({ setStop, questionNo, setQuestionNo }) => {
 
   useEffect(() => {
     setCurrentQues(data[questionNo - 1]); // array index - 1
-  }, [data, questionNo]);
+  }, [questionNo]);
 
   const handleClick = (ans) => {
     setSelectedAns(ans);

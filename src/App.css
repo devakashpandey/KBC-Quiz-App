@@ -44,8 +44,8 @@
   right: 0px;
   top: 10rem;
   margin: auto;
-
   background: #0e0124;
+  box-shadow: 2px 3px 15px black;
 }
 
 .bottom {

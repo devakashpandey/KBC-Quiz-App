@@ -5,9 +5,9 @@
 }
 
 .moneyList-item {
-  padding: 6px;
+  padding: 0.4rem;
   border-radius: 5px;
-  font-size: 18px;
+  font-size: 1.3rem;
   font-weight: 500;
   display: flex;
 }
