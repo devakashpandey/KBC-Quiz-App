@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./User.css";
 import startImg from "../../assets/startImg.png";
 
-const User = () => {
+const User = ({ setUsername }) => {
+  const inputRef = useRef();
+
+  const handleClick = () => {
+    inputRef.current.value && setUsername(inputRef.current.value);
+  };
   return (
     <>
       <div className="start">
@@ -13,8 +18,11 @@ const User = () => {
           type="text"
           placeholder="Enter your name"
           className="startInput"
+          ref={inputRef}
         ></input>
-        <button className="startBtn">Start</button>
+        <button className="startBtn" onClick={handleClick}>
+          Start
+        </button>
       </div>
       <div class="custom-shape-divider-bottom-1680017593">
         <svg
