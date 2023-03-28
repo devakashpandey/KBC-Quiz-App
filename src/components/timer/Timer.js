@@ -12,7 +12,7 @@ const Timer = ({ setStop, questionNo }) => {
   }, [setStop, timer]);
 
   useEffect(() => {
-    setTimer(35);
+    setTimer(10000);
   }, [questionNo]);
 
   return timer;

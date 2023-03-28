@@ -86,3 +86,17 @@
     background: crimson;
   }
 }
+
+@media (max-width: 500px) {
+  .ques {
+    font-size: 20px;
+    padding: 18px;
+    margin-top: 4rem;
+  }
+  .answer {
+    font-size: 18px;
+  }
+  .answers {
+    margin-bottom: 3rem;
+  }
+}
